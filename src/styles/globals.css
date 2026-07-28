@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --color-primary: #3b74d6;
+  --color-primary-dark: #2d5cb8;
+  --color-primary-glow: rgba(59, 116, 214, 0.25);
+  --color-accent: #3b74d6;
+  --color-bg: #141414;
+  --color-bg-deeper: #0d0d0d;
+  --color-surface: #1a1a1a;
+  --color-surface-hover: #222222;
+  --color-border: rgba(255, 255, 255, 0.06);
+  --color-text: #ececec;
+  --color-text-muted: #8e9196;
+
+  --text-hero: clamp(2.5rem, 5vw, 4rem);
+  --text-h2: clamp(1.75rem, 3.5vw, 2.5rem);
+  --text-h3: 1.35rem;
+  --text-body: 1.0625rem;
+  --text-small: 0.875rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-size: var(--text-body);
+  font-family: 'Nunito', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Arabic text uses Cairo */
+[dir="rtl"] body,
+[dir="rtl"] {
+  font-family: 'Cairo', 'Nunito', system-ui, sans-serif;
+}
+
+/* RTL overrides */
+[dir="rtl"] .icon-arrow {
+  transform: rotate(180deg);
+}
+
+/* Subtle grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Selection */
+::selection {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3a;
+}
+
+/* Glow utility */
+.glow-primary {
+  box-shadow: 0 0 30px var(--color-primary-glow), 0 0 60px rgba(59, 116, 214, 0.1);
+}
+.glow-primary-sm {
+  box-shadow: 0 0 15px var(--color-primary-glow);
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, #5b9cf5 0%, #3b74d6 40%, #2d5cb8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass card */
+.glass-card {
+  background: rgba(26, 26, 26, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Animated gradient border */
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(59, 116, 214, 0.4), transparent 40%, transparent 60%, rgba(59, 116, 214, 0.2));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Light theme */
+[data-theme="light"] {
+  --color-primary: #3b74d6;
+  --color-primary-dark: #2d5cb8;
+  --color-primary-glow: rgba(59, 116, 214, 0.15);
+  --color-accent: #3b74d6;
+  --color-bg: #f5f5f7;
+  --color-bg-deeper: #e8e8ec;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f0f0f5;
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-text: #1a1a1a;
+  --color-text-muted: #6b6b76;
+}
+
+[data-theme="light"] .text-gradient {
+  background: linear-gradient(135deg, #3b74d6 0%, #2d5cb8 70%, #1a4a9e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme="light"] ::-webkit-scrollbar-track {
+  background: #e8e8ec;
+}
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: #c0c0c8;
+}
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a8;
+}

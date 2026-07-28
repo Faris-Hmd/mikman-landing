@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "title": "Mikman — Router Manager App",
+    "description": "Mikman is the all-in-one router management application for MikroTik networks. Monitor, configure, and manage your routers from a single dashboard. Get started now at app.mikman.net."
+  },
+  "nav": {
+    "features": "Features",
+    "plans": "Plans",
+    "start": "Get Started",
+    "cta": "Open App"
+  },
+  "hero": {
+    "badge": "Cloud Hotspot Manager",
+    "title": "Manage Your Routers Like a Pro",
+    "subtitle": "Mikman gives you full control over your MikroTik routers — monitoring, configuration, and automation — all from one beautiful dashboard.",
+    "cta": "Launch App",
+    "secondary": "Learn More"
+  },
+  "features": {
+    "heading": "What Mikman Does",
+    "subheading": "Everything you need to manage your network infrastructure, built for speed and simplicity.",
+    "items": [
+      {
+        "title": "Router Dashboard",
+        "description": "View all your routers at a glance — status, uptime, traffic, and health metrics in real time."
+      },
+      {
+        "title": "Configuration Manager",
+        "description": "Edit firewall rules, DHCP settings, queues, and more directly from the web interface."
+      },
+      {
+        "title": "Traffic Monitoring",
+        "description": "Visualize bandwidth usage with live charts. Identify bottlenecks and top talkers instantly."
+      },
+      {
+        "title": "Multi-Device Support",
+        "description": "Add and manage multiple MikroTik devices from a single account. Scale without friction."
+      },
+      {
+        "title": "Alerts & Notifications",
+        "description": "Get notified when a router goes offline, CPU spikes, or a link fails. Stay ahead of issues."
+      },
+      {
+        "title": "Secure Access",
+        "description": "API-based communication with your routers over encrypted channels. Your credentials, your control."
+      }
+    ]
+  },
+  "plans": {
+    "heading": "Plans & Roadmap",
+    "subheading": "Start free, upgrade as you grow. Here is what is available now and what is coming.",
+    "current": "Current",
+    "upcoming": "Coming Soon",
+    "tiers": [
+      {
+        "name": "Free",
+        "price": "$0",
+        "period": "forever",
+        "features": [
+          "Up to 3 routers",
+          "Basic dashboard",
+          "Traffic monitoring",
+          "Community support"
+        ],
+        "cta": "Start Free",
+        "highlight": false
+      },
+      {
+        "name": "Pro",
+        "price": "$12",
+        "period": "/month",
+        "features": [
+          "Unlimited routers",
+          "Advanced analytics",
+          "Config backup & restore",
+          "Alert notifications",
+          "Priority support"
+        ],
+        "cta": "Coming Soon",
+        "highlight": true
+      },
+      {
+        "name": "Enterprise",
+        "price": "Custom",
+        "period": "",
+        "features": [
+          "Everything in Pro",
+          "Multi-user access",
+          "API access",
+          "Dedicated support",
+          "Custom integrations"
+        ],
+        "cta": "Contact Us",
+        "highlight": false
+      }
+    ]
+  },
+  "howToStart": {
+    "heading": "How to Get Started",
+    "subheading": "Three simple steps to take control of your network.",
+    "steps": [
+      {
+        "step": "1",
+        "title": "Open the App",
+        "description": "Go to app.mikman.net from any modern browser — desktop or mobile."
+      },
+      {
+        "step": "2",
+        "title": "Add Your Router",
+        "description": "Enter your MikroTik router IP, username, and password. Mikman connects securely via the REST API."
+      },
+      {
+        "step": "3",
+        "title": "Take Control",
+        "description": "Monitor traffic, tweak configurations, and manage everything from the dashboard."
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "© 2026 Mikman. All rights reserved.",
+    "tagline": "Built for network engineers, by network engineers.",
+    "links": {
+      "app": "Open App",
+      "contact": "Contact"
+    }
+  }
+}
