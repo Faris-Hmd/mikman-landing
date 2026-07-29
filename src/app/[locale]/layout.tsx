@@ -45,7 +45,11 @@ export default async function LocaleLayout({
   const isRtl = locale === "ar";
 
   return (
-    <html lang={locale} dir={isRtl ? "rtl" : "ltr"} data-theme="dark">
+    <html lang={locale} dir={isRtl ? "rtl" : "ltr"} data-theme="light">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body className={`antialiased ${isRtl ? "font-cairo" : "font-sans"}`}>
         <NextIntlClientProvider messages={messages}>
           {children}

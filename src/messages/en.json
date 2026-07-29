@@ -88,16 +88,18 @@
   "plans": {
     "eyebrow": "PRICING",
     "heading": "Flexible Plans",
-    "subheading": "Start free with up to 3 routers, upgrade as your network grows.",
+    "subheading": "Start free for a week, upgrade as your network grows.",
+    "whatsapp": "249966626693",
+    "whatsappMsg": "Hi, I'm interested in the %s plan for Mikman.",
     "current": "Current",
     "upcoming": "Pro Tier",
     "tiers": [
       {
         "name": "Free",
         "price": "0 SDG",
-        "period": "forever",
+        "period": "/week",
         "features": [
-          "Up to 3 MikroTik routers",
+          "1 MikroTik router",
           "Hotspot voucher manager",
           "Realtime status dashboard",
           "Community support"
@@ -106,11 +108,25 @@
         "highlight": false
       },
       {
-        "name": "Pro",
-        "price": "7,500 SDG",
+        "name": "Basic",
+        "price": "30,000 SDG",
         "period": "/month",
         "features": [
-          "Unlimited MikroTik routers",
+          "1 MikroTik router",
+          "SDG Revenue analytics & reporting",
+          "Custom PDF voucher templates",
+          "Automated config backups",
+          "Priority support"
+        ],
+        "cta": "Open App",
+        "highlight": false
+      },
+      {
+        "name": "Pro",
+        "price": "50,000 SDG",
+        "period": "/month",
+        "features": [
+          "Up to 5 MikroTik routers",
           "SDG Revenue analytics & reporting",
           "Custom PDF voucher templates",
           "Automated config backups",
@@ -120,15 +136,16 @@
         "highlight": true
       },
       {
-        "name": "Enterprise",
-        "price": "Custom",
-        "period": "",
+        "name": "Max",
+        "price": "80,000 SDG",
+        "period": "/month",
         "features": [
-          "All Pro features included",
+          "Up to 20 MikroTik routers",
+          "SDG Revenue analytics & reporting",
+          "Custom PDF voucher templates",
+          "Automated config backups",
           "Multi-admin permissions",
-          "Custom API integration",
-          "Dedicated server option",
-          "24/7 Phone & WhatsApp support"
+          "Priority support"
         ],
         "cta": "Contact Us",
         "highlight": false
@@ -197,7 +214,7 @@
     "successMsg": "Thank you! Your message has been sent successfully."
   },
   "footer": {
-    "copyright": "© 2026 Mikman. Design & Develop with ❤️ for Network Operators.",
+    "copyright": "© 2026 Mikman. Contact: farishmd93@gmail.com",
     "tagline": "Built for network engineers and hotspot operators.",
     "links": {
       "app": "Launch App",

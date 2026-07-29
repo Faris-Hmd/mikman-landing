@@ -97,25 +97,25 @@ export default function Showcase() {
 
         {/* Mockup Showcase Section */}
         <div className="relative max-w-5xl mx-auto pt-1 pb-4 sm:pb-8">
-          {/* Left Arrow */}
+          {/* Left Arrow (Previous in LTR, Next in RTL) */}
           <button
-            onClick={() => setActiveIndex((prev) => (prev - 1 + screens.length) % screens.length)}
+            onClick={() => isAr ? goToNext() : setActiveIndex((prev) => (prev - 1 + screens.length) % screens.length)}
             className="absolute left-0 top-1/2 -translate-y-1/2 z-30 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-surface-card border border-border hover:border-primary/40 text-text-muted hover:text-primary flex items-center justify-center transition-all duration-200 shadow-sm -translate-x-1 sm:-translate-x-4"
-            aria-label="Previous screen"
+            aria-label={isAr ? "Next screen" : "Previous screen"}
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+            <svg className={`w-4 h-4 ${isAr ? "" : "rotate-0"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d={isAr ? "M9 5l7 7-7 7" : "M15 19l-7-7 7-7"} />
             </svg>
           </button>
 
-          {/* Right Arrow */}
+          {/* Right Arrow (Next in LTR, Previous in RTL) */}
           <button
-            onClick={goToNext}
+            onClick={() => isAr ? setActiveIndex((prev) => (prev - 1 + screens.length) % screens.length) : goToNext()}
             className="absolute right-0 top-1/2 -translate-y-1/2 z-30 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-surface-card border border-border hover:border-primary/40 text-text-muted hover:text-primary flex items-center justify-center transition-all duration-200 shadow-sm translate-x-1 sm:translate-x-4"
-            aria-label="Next screen"
+            aria-label={isAr ? "Previous screen" : "Next screen"}
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d={isAr ? "M15 19l-7-7 7-7" : "M9 5l7 7-7 7"} />
             </svg>
           </button>
 

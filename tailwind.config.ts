@@ -27,6 +27,7 @@ const config: Config = {
         "hero-fade": "var(--color-hero-fade)",
       },
       fontFamily: {
+        sans: ["Inter", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
         cairo: ["Cairo", "system-ui", "-apple-system", "sans-serif"],
         nunito: ["Nunito", "system-ui", "-apple-system", "sans-serif"],
       },

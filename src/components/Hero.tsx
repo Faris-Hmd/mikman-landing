@@ -14,7 +14,7 @@ export default function Hero() {
   const shapeY = useTransform(scrollY, [0, 800], [0, 40]);
 
   return (
-    <section id="hero" className="relative pt-20 pb-16 sm:pt-28 sm:pb-20 lg:pt-36 lg:pb-24 min-h-[auto] sm:min-h-[calc(100dvh-64px)] flex items-center overflow-hidden">
+    <section id="hero" className="relative pt-24 pb-20 sm:pt-28 sm:pb-20 lg:pt-36 lg:pb-24 min-h-[calc(100dvh-56px)] sm:min-h-[calc(100dvh-64px)] flex items-center overflow-hidden">
       {/* ==================== BACKGROUND DECORATIVE SHAPES ==================== */}
       
       {/* Large blurred gradient orbs */}
@@ -105,34 +105,34 @@ export default function Hero() {
               transition={{ duration: 0.5 }}
             >
               {/* Eyebrow */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 mb-3 sm:mb-4">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-primary/20 bg-primary/5 mb-4 sm:mb-5">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                <span className="text-[10px] sm:text-xs font-black text-primary tracking-widest uppercase">
+                <span className="text-[11px] sm:text-xs font-black text-primary tracking-widest uppercase">
                   {isAr ? "إدارة راوترات ميكروتك" : "MIKROTIK ROUTER MANAGER"}
                 </span>
               </div>
 
               {/* Main Headline */}
-              <h1 className="text-xl sm:text-4xl lg:text-5xl font-black tracking-tight mb-2 sm:mb-4 leading-[1.15] text-text-primary">
+              <h1 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight mb-3 sm:mb-5 leading-[1.15] text-text-primary">
                 <span className="text-primary">MIKMAN</span> — {t("title")}
               </h1>
 
               {/* Subtitle */}
-              <p className="text-[11px] sm:text-base lg:text-lg max-w-xl mx-auto lg:mx-0 mb-3 sm:mb-6 font-normal leading-relaxed text-text-muted">
+              <p className="text-sm sm:text-base lg:text-lg max-w-xl mx-auto lg:mx-0 mb-5 sm:mb-7 font-normal leading-relaxed text-text-muted">
                 {t("subtitle")}
               </p>
 
               {/* Action Buttons */}
-              <div className="flex flex-row items-center justify-center lg:justify-start gap-2 sm:gap-3 mb-2 sm:mb-4">
+              <div className="flex flex-row items-center justify-center lg:justify-start gap-3 sm:gap-3.5 mb-4 sm:mb-5">
                 <a
                   href="https://app.mikman.net"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-1.5 sm:gap-2 bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white font-extrabold px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl transition-all duration-300 text-[10px] sm:text-sm uppercase tracking-wider shadow-sm hover:shadow hover:scale-105 whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-2 sm:gap-2.5 bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white font-extrabold px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl transition-all duration-300 text-xs sm:text-sm uppercase tracking-wider shadow-sm hover:shadow hover:scale-105 whitespace-nowrap"
                 >
                   <span>{t("cta")}</span>
                   <svg
-                    className={`w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 ${isAr ? "rotate-180" : ""}`}
+                    className={`w-4 h-4 sm:w-4.5 sm:h-4.5 transition-transform duration-300 ${isAr ? "rotate-180" : ""}`}
                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -141,22 +141,22 @@ export default function Hero() {
 
                 <a
                   href="#showcase"
-                  className="inline-flex items-center justify-center gap-1.5 sm:gap-2 border border-border text-text-primary hover:bg-surface/80 bg-surface/40 backdrop-blur-md px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl transition-all text-[10px] sm:text-sm font-bold uppercase tracking-wider hover:border-primary/40 whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-1.5 sm:gap-2 border border-border text-text-primary hover:bg-surface/80 bg-surface/40 backdrop-blur-md px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl transition-all text-xs sm:text-sm font-bold uppercase tracking-wider hover:border-primary/40 whitespace-nowrap"
                 >
                   {t("secondary")}
                 </a>
               </div>
 
               {/* Stats row */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-5 mt-3 sm:mt-4">
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-5 mt-4 sm:mt-5">
                 {[
                   { value: "99.9%", label: isAr ? "وقت التشغيل" : "Uptime" },
-                  { value: "3,410+", label: isAr ? "كارت نشط" : "Vouchers" },
-                  { value: "184", label: isAr ? "مستخدم نشط" : "Users" },
+                  { value: "10K+", label: isAr ? "كارت نشط" : "Vouchers" },
+                  { value: "100+", label: isAr ? "مستخدم نشط" : "Users" },
                 ].map((stat, i) => (
                   <div key={i} className="flex items-center gap-1.5">
-                    <span className="text-sm sm:text-lg font-black text-text-primary">{stat.value}</span>
-                    <span className="text-[9px] sm:text-[11px] font-semibold text-text-muted uppercase tracking-wide">{stat.label}</span>
+                    <span className="text-base sm:text-lg lg:text-xl font-black text-text-primary">{stat.value}</span>
+                    <span className="text-[10px] sm:text-xs font-semibold text-text-muted uppercase tracking-wide">{stat.label}</span>
                     {i < 2 && <span className="w-1 h-1 rounded-full bg-border hidden sm:block" />}
                   </div>
                 ))}
