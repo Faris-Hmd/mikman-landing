@@ -38,7 +38,8 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
     apple: "/icon-192.png",
   },
   manifest: "/manifest.json",
