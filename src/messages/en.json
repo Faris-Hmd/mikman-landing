@@ -1,65 +1,105 @@
 {
   "meta": {
-    "title": "Mikman — Router Manager App",
-    "description": "Mikman is the all-in-one router management application for MikroTik networks. Monitor, configure, and manage your routers from a single dashboard. Get started now at app.mikman.net."
+    "title": "Mikman — Cloud MikroTik Router & Hotspot Manager",
+    "description": "Mikman is the all-in-one router and hotspot management app for MikroTik networks. Monitor traffic, print vouchers, and track revenue."
   },
   "nav": {
+    "home": "Home",
     "features": "Features",
+    "application": "Application",
+    "faqs": "FAQs",
+    "download": "Download",
+    "reviews": "Reviews",
+    "contact": "Contact Us",
     "plans": "Plans",
-    "start": "Get Started",
-    "cta": "Open App"
+    "start": "How to Start",
+    "cta": "Launch App",
+    "signup": "SIGN UP"
   },
   "hero": {
-    "badge": "Cloud Hotspot Manager",
-    "title": "Manage Your Routers Like a Pro",
-    "subtitle": "Mikman gives you full control over your MikroTik routers — monitoring, configuration, and automation — all from one beautiful dashboard.",
-    "cta": "Launch App",
-    "secondary": "Learn More"
+    "eyebrow": "ROUTER & HOTSPOT MANAGER",
+    "title": "Manage Your MikroTik Routers Easily",
+    "subtitle": "Monitor live traffic, print hotspot vouchers, track revenue in SDG, and manage all your routers from one clean dashboard.",
+    "cta": "Open Mikman App",
+    "secondary": "View App Screenshots"
   },
   "features": {
-    "heading": "What Mikman Does",
-    "subheading": "Everything you need to manage your network infrastructure, built for speed and simplicity.",
+    "eyebrow": "FEATURES",
+    "heading": "Everything You Need to Scale",
+    "subheading": "Everything you need to manage your MikroTik network infrastructure efficiently.",
     "items": [
       {
         "title": "Router Dashboard",
-        "description": "View all your routers at a glance — status, uptime, traffic, and health metrics in real time."
+        "description": "Monitor uptime, CPU load, RAM, connected users, and system temperature in real time."
       },
       {
         "title": "Configuration Manager",
-        "description": "Edit firewall rules, DHCP settings, queues, and more directly from the web interface."
+        "description": "Edit interfaces, DHCP leases, queues, and firewall settings directly from the web interface."
       },
       {
-        "title": "Traffic Monitoring",
-        "description": "Visualize bandwidth usage with live charts. Identify bottlenecks and top talkers instantly."
+        "title": "Traffic & Revenue Analytics",
+        "description": "Visualize live bandwidth consumption and daily sales revenue in SDG per voucher profile."
       },
       {
-        "title": "Multi-Device Support",
-        "description": "Add and manage multiple MikroTik devices from a single account. Scale without friction."
+        "title": "Multi-Router Cloud",
+        "description": "Connect and manage multiple MikroTik devices from a single account with instant switching."
       },
       {
-        "title": "Alerts & Notifications",
-        "description": "Get notified when a router goes offline, CPU spikes, or a link fails. Stay ahead of issues."
+        "title": "Voucher & Batch Printing",
+        "description": "Generate hotspot voucher batches, track activation status, and print PDF cards."
       },
       {
-        "title": "Secure Access",
-        "description": "API-based communication with your routers over encrypted channels. Your credentials, your control."
+        "title": "Secure WireGuard Connection",
+        "description": "Encrypted communication between Mikman backend and your routers via WireGuard VPN."
+      }
+    ]
+  },
+  "showcase": {
+    "eyebrow": "MOBILE APPS",
+    "heading": "Available for Your Smartphones",
+    "subheading": "Unleash the power of our platform with a multitude of powerful features, empowering you to achieve your goals.",
+    "downloadTitle": "Install app now on your cellphones",
+    "installNow": "Install Now →",
+    "statLabel": "Total Active Vouchers",
+    "statVal": "45,485"
+  },
+  "reviews": {
+    "eyebrow": "REVIEWS",
+    "heading": "10k+ Customers Trust Us",
+    "subheading": "Unleash the power of our platform with a multitude of powerful features, empowering you to achieve your goals.",
+    "items": [
+      {
+        "quote": "Thus, Mikman has completely simplified our daily hotspot voucher batch printing and traffic management across all 5 routers.",
+        "author": "Ahmed Hassan",
+        "role": "Hotspot Operator"
+      },
+      {
+        "quote": "The WireGuard cloud connection is seamless. We monitor real-time bandwidth consumption and system metrics effortlessly.",
+        "author": "Mohamed Ali",
+        "role": "ISP Network Engineer"
+      },
+      {
+        "quote": "Revenue reporting in SDG per profile gives us precise financial insights daily. A must-have app for MikroTik admins.",
+        "author": "Siddig Omar",
+        "role": "Network Administrator"
       }
     ]
   },
   "plans": {
-    "heading": "Plans & Roadmap",
-    "subheading": "Start free, upgrade as you grow. Here is what is available now and what is coming.",
+    "eyebrow": "PRICING",
+    "heading": "Flexible Plans",
+    "subheading": "Start free with up to 3 routers, upgrade as your network grows.",
     "current": "Current",
-    "upcoming": "Coming Soon",
+    "upcoming": "Pro Tier",
     "tiers": [
       {
         "name": "Free",
-        "price": "$0",
+        "price": "0 SDG",
         "period": "forever",
         "features": [
-          "Up to 3 routers",
-          "Basic dashboard",
-          "Traffic monitoring",
+          "Up to 3 MikroTik routers",
+          "Hotspot voucher manager",
+          "Realtime status dashboard",
           "Community support"
         ],
         "cta": "Start Free",
@@ -67,16 +107,16 @@
       },
       {
         "name": "Pro",
-        "price": "$12",
+        "price": "7,500 SDG",
         "period": "/month",
         "features": [
-          "Unlimited routers",
-          "Advanced analytics",
-          "Config backup & restore",
-          "Alert notifications",
+          "Unlimited MikroTik routers",
+          "SDG Revenue analytics & reporting",
+          "Custom PDF voucher templates",
+          "Automated config backups",
           "Priority support"
         ],
-        "cta": "Coming Soon",
+        "cta": "Open App",
         "highlight": true
       },
       {
@@ -84,11 +124,11 @@
         "price": "Custom",
         "period": "",
         "features": [
-          "Everything in Pro",
-          "Multi-user access",
-          "API access",
-          "Dedicated support",
-          "Custom integrations"
+          "All Pro features included",
+          "Multi-admin permissions",
+          "Custom API integration",
+          "Dedicated server option",
+          "24/7 Phone & WhatsApp support"
         ],
         "cta": "Contact Us",
         "highlight": false
@@ -96,32 +136,72 @@
     ]
   },
   "howToStart": {
+    "eyebrow": "HOW TO START",
     "heading": "How to Get Started",
-    "subheading": "Three simple steps to take control of your network.",
+    "subheading": "Three simple steps to take control of your MikroTik network.",
     "steps": [
       {
         "step": "1",
-        "title": "Open the App",
-        "description": "Go to app.mikman.net from any modern browser — desktop or mobile."
+        "title": "Open Mikman App",
+        "description": "Go to app.mikman.net from any browser on desktop or phone."
       },
       {
         "step": "2",
         "title": "Add Your Router",
-        "description": "Enter your MikroTik router IP, username, and password. Mikman connects securely via the REST API."
+        "description": "Enter your router credentials to establish the WireGuard connection."
       },
       {
         "step": "3",
-        "title": "Take Control",
-        "description": "Monitor traffic, tweak configurations, and manage everything from the dashboard."
+        "title": "Manage & Print Vouchers",
+        "description": "Generate voucher batches, monitor traffic, and review SDG revenue stats."
       }
     ]
   },
+  "faq": {
+    "eyebrow": "FAQS",
+    "heading": "Have Questions? Look Here",
+    "subheading": "Unleash the power of our platform with a multitude of powerful features, empowering you to achieve your goals.",
+    "findOutMore": "Find Out More →",
+    "items": [
+      {
+        "q": "How does Mikman connect to my MikroTik router?",
+        "a": "Mikman establishes an encrypted WireGuard VPN tunnel between our cloud backend and your MikroTik router using a zero-touch idempotent configuration script."
+      },
+      {
+        "q": "Do I need a public static IP address on my router?",
+        "a": "No! Thanks to WireGuard VPN connectivity, Mikman connects securely even if your router is behind NAT, 4G LTE, or dynamic IP connections."
+      },
+      {
+        "q": "Can I print custom voucher PDF cards with pricing in SDG?",
+        "a": "Yes. You can generate batch vouchers, customize ticket templates with your brand logo, set prices in SDG, and export ready-to-print PDF cards directly."
+      },
+      {
+        "q": "What happens when I add multiple routers?",
+        "a": "You can seamlessly switch between all registered routers from the side drawer and monitor live metrics for each device in real time."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "CONTACT US",
+    "heading": "Get in Touch !",
+    "subheading": "Have questions or need custom network integration? Send us a message.",
+    "nameLabel": "Your Name:",
+    "emailLabel": "Your Email:",
+    "subjectLabel": "Your Question:",
+    "messageLabel": "Your Comment:",
+    "namePlaceholder": "Name :",
+    "emailPlaceholder": "Email :",
+    "subjectPlaceholder": "Subject :",
+    "messagePlaceholder": "Message :",
+    "sendBtn": "Send Message",
+    "successMsg": "Thank you! Your message has been sent successfully."
+  },
   "footer": {
-    "copyright": "© 2026 Mikman. All rights reserved.",
-    "tagline": "Built for network engineers, by network engineers.",
+    "copyright": "© 2026 Mikman. Design & Develop with ❤️ for Network Operators.",
+    "tagline": "Built for network engineers and hotspot operators.",
     "links": {
-      "app": "Open App",
-      "contact": "Contact"
+      "app": "Launch App",
+      "contact": "Contact Us"
     }
   }
 }

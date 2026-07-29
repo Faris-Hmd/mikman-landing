@@ -1,11 +1,12 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { motion } from "framer-motion";
-import AnimatedSection from "./AnimatedSection";
 
 export default function Plans() {
   const t = useTranslations("plans");
+  const locale = useLocale();
+  const isAr = locale === "ar";
   const tiers = t.raw("tiers") as {
     name: string;
     price: string;
@@ -16,115 +17,103 @@ export default function Plans() {
   }[];
 
   return (
-    <section id="plans" className="py-24 sm:py-32 relative">
-      {/* Background glow */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#3b74d6]/[0.03] rounded-full blur-[150px]" />
-      </div>
+    <section id="plans" className="py-20 sm:py-24 relative overflow-hidden bg-bg/90 transition-colors duration-200">
+      {/* Background Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
 
-      {/* Divider */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
         {/* Section Header */}
-        <AnimatedSection className="text-center mb-16">
-          <span className="inline-block text-[#5b9cf5] text-xs font-extrabold uppercase tracking-[0.2em] mb-4">
-            {t("heading")}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-14 sm:mb-16"
+        >
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-extrabold text-xs tracking-widest uppercase mb-3">
+            {t("eyebrow")}
           </span>
-          <h2 className="text-h2-size font-extrabold text-[#ececec] mb-4 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-text-primary mb-4 tracking-tight">
             {t("heading")}
           </h2>
-          <p className="text-[#8e9196] text-body-size max-w-xl mx-auto">
+          <p className="text-text-muted text-sm sm:text-base max-w-xl mx-auto font-normal leading-relaxed">
             {t("subheading")}
           </p>
-        </AnimatedSection>
+        </motion.div>
 
-        {/* Plan Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+        {/* Plan Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto items-stretch">
           {tiers.map((tier, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 40, scale: 0.97 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: idx * 0.12 }}
-              className={`relative rounded-2xl p-7 border transition-all duration-300 ${
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: idx * 0.1 }}
+              className={`relative rounded-2xl p-7 border backdrop-blur-2xl flex flex-col justify-between transition-all duration-300 group overflow-hidden shadow-sm ${
                 tier.highlight
-                  ? "bg-[#3b74d6]/[0.07] border-[#3b74d6]/30 shadow-[0_0_40px_rgba(59,116,214,0.1)]"
-                  : "bg-[#1a1a1a] border-white/[0.05] hover:border-[#3b74d6]/15 hover:bg-[#1e1e1e]"
+                  ? "bg-surface-card border-blue-500/60 ring-1 ring-blue-500/40 hover:border-blue-400"
+                  : "bg-surface-card border-border hover:border-primary/40 hover:bg-surface"
               }`}
             >
+              {/* Top Accent Line */}
+              <div
+                className={`absolute top-0 inset-x-0 h-1 transition-opacity ${
+                  tier.highlight
+                    ? "bg-gradient-to-r from-blue-500 via-cyan-400 to-indigo-500 opacity-100"
+                    : "bg-gradient-to-r from-slate-500 to-slate-700 opacity-0 group-hover:opacity-100"
+                }`}
+              />
+
+              {/* Popular Badge */}
               {tier.highlight && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 flex items-center gap-1.5 bg-[#3b74d6] text-white text-[11px] font-extrabold px-4 py-1 rounded-full shadow-[0_0_20px_rgba(59,116,214,0.4)] uppercase tracking-wider">
-                  <span className="w-1.5 h-1.5 bg-white/60 rounded-full animate-pulse" />
-                  {t("upcoming")}
+                <div className="absolute top-3 right-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-sm">
+                  {isAr ? "الأكثر اختيارًا" : "Most Popular"}
                 </div>
               )}
 
-              <div className="text-center mb-7">
-                <h3 className="text-[#ececec] font-extrabold text-xl mb-3 tracking-tight">
-                  {tier.name}
-                </h3>
-                <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-5xl font-black text-[#ececec] tracking-tight">
-                    {tier.price}
-                  </span>
-                  {tier.period && (
-                    <span className="text-[#8e9196] text-sm font-semibold">
-                      {tier.period}
+              <div>
+                <div className="mb-6 pt-2">
+                  <h3 className="text-text-primary font-extrabold text-xl mb-2">
+                    {tier.name}
+                  </h3>
+                  <div className="flex items-baseline gap-1 mt-4">
+                    <span className="text-3xl sm:text-4xl font-black tracking-tight text-text-primary">
+                      {tier.price}
                     </span>
-                  )}
+                    {tier.period && (
+                      <span className="text-text-muted text-xs font-bold uppercase tracking-wider">
+                        {tier.period}
+                      </span>
+                    )}
+                  </div>
                 </div>
+
+                <div className="h-px bg-border w-full mb-6" />
+
+                <ul className="space-y-3.5 mb-8 text-xs sm:text-sm text-text-primary">
+                  {tier.features.map((feature, fi) => (
+                    <li key={fi} className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-md bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shrink-0 mt-0.5 text-blue-400">
+                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span className="font-medium leading-relaxed">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
-              <ul className="space-y-3 mb-8">
-                {tier.features.map((feature, fi) => (
-                  <li
-                    key={fi}
-                    className="flex items-start gap-3 text-[#8e9196] text-small-size"
-                  >
-                    <svg
-                      className={`w-5 h-5 mt-0.5 shrink-0 ${
-                        tier.highlight
-                          ? "text-[#5b9cf5]"
-                          : "text-[#3b74d6]/60"
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span className="font-semibold">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
               <a
-                href={
-                  tier.cta === t("upcoming") || tier.name === "Enterprise"
-                    ? "#"
-                    : "https://app.mikman.net"
-                }
-                target={
-                  tier.cta === t("upcoming") || tier.name === "Enterprise"
-                    ? undefined
-                    : "_blank"
-                }
-                rel={
-                  tier.cta === t("upcoming") || tier.name === "Enterprise"
-                    ? undefined
-                    : "noopener noreferrer"
-                }
-                className={`block text-center py-3 rounded-xl font-bold transition-all duration-300 text-sm ${
+                href="https://app.mikman.net"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`block text-center py-3.5 px-6 rounded-xl font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-sm ${
                   tier.highlight
-                    ? "bg-[#3b74d6] hover:bg-[#477de0] text-white shadow-[0_0_25px_rgba(59,116,214,0.25)] hover:shadow-[0_0_40px_rgba(59,116,214,0.4)] hover:scale-[1.02]"
-                    : "border border-white/[0.08] text-[#8e9196] hover:text-[#ececec] hover:border-white/[0.15] hover:bg-white/[0.03]"
+                    ? "bg-blue-600 hover:bg-blue-500 text-white"
+                    : "border border-border bg-surface text-text-primary hover:bg-surface-card hover:border-primary/40"
                 }`}
               >
                 {tier.cta}

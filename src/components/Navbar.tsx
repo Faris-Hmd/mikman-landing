@@ -1,7 +1,6 @@
 "use client";
 
 import { useTranslations, useLocale } from "next-intl";
-import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeToggle from "./ThemeToggle";
@@ -20,104 +19,79 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
+    { href: "#hero", label: t("home") },
     { href: "#features", label: t("features") },
+    { href: "#showcase", label: t("application") },
     { href: "#plans", label: t("plans") },
     { href: "#how-to-start", label: t("start") },
   ];
 
   return (
-    <motion.nav
-      initial={{ y: -80 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+    <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#141414]/85 backdrop-blur-xl border-b border-white/[0.04] shadow-[0_1px_0_rgba(59,116,214,0.08)]"
-          : "bg-transparent"
+          ? "bg-bg/85 backdrop-blur-xl border-b border-border shadow-sm py-2"
+          : "bg-transparent py-3"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between">
           {/* Logo */}
-          <a
-            href="/"
-            className="flex items-center gap-2.5 group"
-          >
-            <div className="w-9 h-9 rounded-xl bg-[#3b74d6] flex items-center justify-center shadow-[0_0_15px_rgba(59,116,214,0.3)] group-hover:shadow-[0_0_25px_rgba(59,116,214,0.5)] transition-shadow duration-300">
-              <svg className="w-5 h-5 text-white -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+          <a href="/" className="flex items-center gap-2">
+            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center text-white border border-white/20 shrink-0">
+              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
               </svg>
             </div>
-            <span className="text-[#ececec] font-extrabold text-xl tracking-tight">
-              <span className="text-[#3b74d6]">MIK</span>MAN
+            <span className="text-text-primary font-black text-lg tracking-tight">
+              <span className="text-primary">MIK</span>MAN
             </span>
           </a>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-0.5 bg-surface-card/60 border border-border rounded-full px-2.5 py-1 backdrop-blur-md">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-[#8e9196] hover:text-[#ececec] transition-colors duration-200 text-sm font-semibold px-4 py-2 rounded-lg hover:bg-white/[0.04]"
+                className="text-text-muted hover:text-text-primary hover:bg-surface transition-all text-[11px] uppercase tracking-wider font-bold px-2.5 py-1 rounded-full"
               >
                 {link.label}
               </a>
             ))}
-            <div className="w-px h-5 bg-white/[0.08] mx-2" />
+          </div>
+
+          {/* Action Buttons */}
+          <div className="hidden md:flex items-center gap-2">
             <LanguageSwitcher />
             <ThemeToggle />
             <a
               href="https://app.mikman.net"
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-1 inline-flex items-center gap-2 bg-[#3b74d6] hover:bg-[#2d5cb8] text-white font-bold px-5 py-2 rounded-xl transition-all duration-200 text-sm shadow-[0_0_20px_rgba(59,116,214,0.25)] hover:shadow-[0_0_30px_rgba(59,116,214,0.4)] hover:scale-[1.02]"
+              className="inline-flex items-center gap-1.5 bg-gradient-to-r from-primary to-blue-600 hover:from-primary-dark hover:to-blue-700 text-white font-bold px-3.5 py-1.5 rounded-lg transition-all duration-300 text-[11px] tracking-wider uppercase hover:scale-105"
             >
-              {t("cta")}
-              <svg
-                className={`w-4 h-4 icon-arrow ${isRtl ? "rotate-180" : ""}`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2.5}
-                  d="M13 7l5 5m0 0l-5 5m5-5H6"
-                />
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
+              {t("cta")}
             </a>
           </div>
 
           {/* Mobile Toggle */}
-          <div className="flex md:hidden items-center gap-3">
+          <div className="flex md:hidden items-center gap-1.5">
             <LanguageSwitcher />
+            <ThemeToggle />
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="text-[#ececec] p-2 rounded-lg hover:bg-white/[0.04] transition-colors"
+              className="text-text-primary p-2 rounded-lg border border-border bg-surface hover:bg-surface-card transition-colors"
               aria-label="Toggle menu"
             >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {mobileOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 )}
               </svg>
             </button>
@@ -126,36 +100,29 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[#1a1a1a]/95 backdrop-blur-xl rounded-2xl mt-2 p-4 shadow-2xl border border-white/[0.06]"
-          >
-            <div className="flex flex-col gap-1">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="text-[#8e9196] hover:text-[#ececec] hover:bg-white/[0.04] transition-all duration-200 py-3 px-4 rounded-xl text-sm font-semibold"
-                >
-                  {link.label}
-                </a>
-              ))}
+          <div className="md:hidden bg-surface-card/95 backdrop-blur-2xl rounded-xl mt-2 p-3 border border-border shadow-md space-y-1">
+            {navLinks.map((link) => (
               <a
-                href="https://app.mikman.net"
-                target="_blank"
-                rel="noopener noreferrer"
+                key={link.href}
+                href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="inline-flex items-center justify-center gap-2 bg-[#3b74d6] hover:bg-[#2d5cb8] text-white font-bold px-5 py-3 rounded-xl transition-all duration-200 text-sm text-center mt-2 shadow-[0_0_20px_rgba(59,116,214,0.2)]"
+                className="block text-text-muted hover:text-text-primary hover:bg-surface py-2 px-3 rounded-lg text-xs font-semibold transition-colors"
               >
-                {t("cta")}
+                {link.label}
               </a>
-            </div>
-          </motion.div>
+            ))}
+            <a
+              href="https://app.mikman.net"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileOpen(false)}
+              className="block bg-gradient-to-r from-primary to-blue-600 text-white font-bold py-2 px-3 rounded-lg text-xs text-center mt-2"
+            >
+              {t("cta")}
+            </a>
+          </div>
         )}
       </div>
-    </motion.nav>
+    </nav>
   );
 }

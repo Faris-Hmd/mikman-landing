@@ -7,8 +7,7 @@ export default function ThemeToggle() {
 
   useEffect(() => {
     const stored = localStorage.getItem("theme") as "light" | "dark" | null;
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const initial = stored || (prefersDark ? "dark" : "light");
+    const initial = stored || "dark";
     setTheme(initial);
     document.documentElement.setAttribute("data-theme", initial);
   }, []);
@@ -23,13 +22,13 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="relative w-10 h-10 rounded-xl border border-white/[0.08] hover:border-white/[0.15] hover:bg-white/[0.03] flex items-center justify-center text-[#8e9196] hover:text-[#ececec] transition-all duration-200"
+      className="relative w-10 h-10 rounded-xl border border-border hover:border-border-hover bg-surface/80 hover:bg-surface-hover flex items-center justify-center text-text-muted hover:text-text-primary transition-all duration-200"
       aria-label="Toggle theme"
     >
       {/* Sun icon */}
       <svg
         className={`w-5 h-5 transition-all duration-300 absolute ${
-          theme === "light" ? "opacity-0 rotate-90 scale-0" : "opacity-100 rotate-0 scale-100"
+          theme === "light" ? "opacity-0 rotate-90 scale-0" : "opacity-100 rotate-0 scale-100 text-amber-400"
         }`}
         fill="none"
         stroke="currentColor"
@@ -45,7 +44,7 @@ export default function ThemeToggle() {
       {/* Moon icon */}
       <svg
         className={`w-5 h-5 transition-all duration-300 absolute ${
-          theme === "dark" ? "opacity-0 -rotate-90 scale-0" : "opacity-100 rotate-0 scale-100"
+          theme === "dark" ? "opacity-0 -rotate-90 scale-0" : "opacity-100 rotate-0 scale-100 text-blue-600"
         }`}
         fill="none"
         stroke="currentColor"

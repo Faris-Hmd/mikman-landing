@@ -45,8 +45,8 @@ export default async function LocaleLayout({
   const isRtl = locale === "ar";
 
   return (
-    <html lang={locale} dir={isRtl ? "rtl" : "ltr"}>
-      <body className="antialiased">
+    <html lang={locale} dir={isRtl ? "rtl" : "ltr"} data-theme="dark">
+      <body className={`antialiased ${isRtl ? "font-cairo" : "font-sans"}`}>
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
