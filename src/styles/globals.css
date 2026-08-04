@@ -15,12 +15,17 @@
   --color-accent-rgb: 99 102 241;
 
   --color-bg: #050811;
-  --color-bg-rgb: 5, 8, 17;
+  --color-bg-rgb: 5 8 17;
   --color-bg-alt: #0b1120;
+  --color-bg-alt-rgb: 11 17 32;
   --color-surface: #0f172a;
+  --color-surface-rgb: 15 23 42;
   --color-surface-hover: #1e293b;
+  --color-surface-hover-rgb: 30 41 59;
   --color-surface-card: rgba(11, 17, 32, 0.85);
+  --color-surface-card-rgb: 11 17 32;
   --color-nav-bg: rgba(5, 8, 17, 0.85);
+  --color-nav-bg-rgb: 5 8 17;
 
   --color-border: rgba(255, 255, 255, 0.1);
   --color-border-hover: rgba(37, 99, 235, 0.4);
@@ -49,12 +54,17 @@
   --color-primary-light-rgb: 59 130 246;
 
   --color-bg: #f8fafc;
-  --color-bg-rgb: 248, 250, 252;
+  --color-bg-rgb: 248 250 252;
   --color-bg-alt: #ffffff;
+  --color-bg-alt-rgb: 255 255 255;
   --color-surface: #ffffff;
+  --color-surface-rgb: 255 255 255;
   --color-surface-hover: #f1f5f9;
+  --color-surface-hover-rgb: 241 245 249;
   --color-surface-card: rgba(255, 255, 255, 0.9);
+  --color-surface-card-rgb: 255 255 255;
   --color-nav-bg: rgba(255, 255, 255, 0.85);
+  --color-nav-bg-rgb: 255 255 255;
 
   --color-border: rgba(15, 23, 42, 0.12);
   --color-border-hover: rgba(37, 99, 235, 0.4);

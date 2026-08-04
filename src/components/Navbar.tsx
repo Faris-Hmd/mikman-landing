@@ -69,7 +69,7 @@ export default function Navbar() {
               href="https://app.mikman.net"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 bg-gradient-to-r from-primary to-blue-600 hover:from-primary-dark hover:to-blue-700 text-white font-bold px-3.5 py-1.5 rounded-lg transition-all duration-300 text-[11px] tracking-wider uppercase hover:scale-105"
+              className="inline-flex items-center justify-center gap-1.5 h-9 px-4 rounded-xl bg-gradient-to-r from-primary to-blue-600 hover:from-primary-dark hover:to-blue-700 text-white font-bold text-xs tracking-wider uppercase transition-all duration-200 hover:scale-105 shadow-sm shrink-0"
             >
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -79,12 +79,12 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Toggle */}
-          <div className="flex md:hidden items-center gap-1.5">
+          <div className="flex md:hidden items-center gap-2">
             <LanguageSwitcher />
             <ThemeToggle />
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="text-text-primary p-2 rounded-lg border border-border bg-surface hover:bg-surface-card transition-colors"
+              className="w-9 h-9 rounded-xl border border-border hover:border-border-hover bg-surface/80 hover:bg-surface backdrop-blur-md flex items-center justify-center text-text-muted hover:text-text-primary transition-all duration-200 shrink-0"
               aria-label="Toggle menu"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -100,13 +100,13 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {mobileOpen && (
-          <div className="md:hidden bg-surface-card/95 backdrop-blur-2xl rounded-xl mt-2 p-3 border border-border shadow-md space-y-1">
+          <div className="md:hidden bg-surface-card/95 backdrop-blur-2xl rounded-2xl mt-2 p-3 border border-border shadow-xl space-y-1.5 animate-in fade-in slide-in-from-top-2 duration-200">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="block text-text-muted hover:text-text-primary hover:bg-surface py-2 px-3 rounded-lg text-xs font-semibold transition-colors"
+                className="block text-text-muted hover:text-text-primary hover:bg-surface/80 py-2.5 px-3.5 rounded-xl text-xs font-bold transition-all"
               >
                 {link.label}
               </a>
@@ -116,8 +116,11 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileOpen(false)}
-              className="block bg-gradient-to-r from-primary to-blue-600 text-white font-bold py-2 px-3 rounded-lg text-xs text-center mt-2"
+              className="flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-blue-600 hover:from-primary-dark hover:to-blue-700 text-white font-bold py-2.5 px-3.5 rounded-xl text-xs text-center mt-2 shadow-sm transition-all"
             >
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
               {t("cta")}
             </a>
           </div>
