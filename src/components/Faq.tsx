@@ -17,10 +17,10 @@ export default function Faq() {
         : "Yes, Mikman fully supports both RouterOS v6 and v7 via native REST API and encrypted connection channels.",
     },
     {
-      q: isAr ? "كيف يتم عرض الإيرادات بالجنيه السوداني (SDG)؟" : "How is revenue tracked in Sudanese Pounds (SDG)?",
+      q: isAr ? "كيف يتم حساب وتقارير الإيرادات؟" : "How is revenue tracked and reported?",
       a: isAr
-        ? "يتم تحديد أسعار الباقات بالجنيه السوداني، وحساب المبيعات والإيرادات اليومية والشهرية وتوليد التقارير بالـ SDG تلقائيًا."
-        : "Voucher prices are configured in SDG, with automatic daily and monthly revenue analytics and reports.",
+        ? "يتم تحديد أسعار كروت الهوتسبوت، وحساب المبيعات والإيرادات اليومية والشهرية وتوليد التقارير تلقائيًا."
+        : "Voucher prices are configured per profile, with automatic daily and monthly revenue analytics and reports.",
     },
     {
       q: isAr ? "كيف يتم الاتصال بأجهزة الراوتر الخاصة بي؟" : "How does Mikman connect to my routers securely?",
@@ -59,8 +59,8 @@ export default function Faq() {
           </h2>
           <p className="text-text-muted text-base max-w-xl mx-auto font-normal leading-relaxed">
             {isAr
-              ? "إجابات شائعة حول التوافق، الإيرادات بالـ SDG، وطباعة الكروت."
-              : "Common questions regarding compatibility, SDG currency, and PDF voucher printing."}
+              ? "إجابات شائعة حول التوافق، متابعة الإيرادات، وطباعة الكروت."
+              : "Common questions regarding compatibility, revenue analytics, and PDF voucher printing."}
           </p>
         </motion.div>
 

@@ -19,7 +19,7 @@
   "hero": {
     "eyebrow": "ROUTER & HOTSPOT MANAGER",
     "title": "Manage Your MikroTik Routers Easily",
-    "subtitle": "Monitor live traffic, print hotspot vouchers, track revenue in SDG, and manage all your routers from one clean dashboard.",
+    "subtitle": "Monitor live traffic, print hotspot vouchers, track revenue, and manage all your routers from one clean dashboard.",
     "cta": "Open Mikman App",
     "secondary": "View App Screenshots"
   },
@@ -38,7 +38,7 @@
       },
       {
         "title": "Traffic & Revenue Analytics",
-        "description": "Visualize live bandwidth consumption and daily sales revenue in SDG per voucher profile."
+        "description": "Visualize live bandwidth consumption and daily sales revenue per voucher profile."
       },
       {
         "title": "Multi-Router Cloud",
@@ -79,7 +79,7 @@
         "role": "ISP Network Engineer"
       },
       {
-        "quote": "Revenue reporting in SDG per profile gives us precise financial insights daily. A must-have app for MikroTik admins.",
+        "quote": "Revenue reporting per profile gives us precise financial insights daily. A must-have app for MikroTik admins.",
         "author": "Siddig Omar",
         "role": "Network Administrator"
       }
@@ -157,7 +157,7 @@
       {
         "step": "3",
         "title": "Manage & Print Vouchers",
-        "description": "Generate voucher batches, monitor traffic, and review SDG revenue stats."
+        "description": "Generate voucher batches, monitor traffic, and review revenue stats."
       }
     ]
   },
@@ -176,8 +176,8 @@
         "a": "No! Thanks to WireGuard VPN connectivity, Mikman connects securely even if your router is behind NAT, 4G LTE, or dynamic IP connections."
       },
       {
-        "q": "Can I print custom voucher PDF cards with pricing in SDG?",
-        "a": "Yes. You can generate batch vouchers, customize ticket templates with your brand logo, set prices in SDG, and export ready-to-print PDF cards directly."
+        "q": "Can I print custom voucher PDF cards with custom pricing?",
+        "a": "Yes. You can generate batch vouchers, customize ticket templates with your brand logo, set prices, and export ready-to-print PDF cards directly."
       },
       {
         "q": "What happens when I add multiple routers?",

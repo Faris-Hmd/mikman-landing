@@ -149,7 +149,7 @@ export default function Features() {
             <div className="bg-bg-alt/90 border border-cyan-500/30 rounded-xl p-3.5 relative overflow-hidden">
               <div className="flex items-center justify-between border-b border-border pb-2 mb-2">
                 <span className="text-[10px] font-black text-cyan-500 uppercase tracking-wider">Mikman Hotspot</span>
-                <span className="text-[9px] font-extrabold text-text-muted bg-surface px-1.5 py-0.5 rounded">{isAr ? "1,000 ج.س" : "1,000 SDG"}</span>
+                <span className="text-[9px] font-extrabold text-text-muted bg-surface px-1.5 py-0.5 rounded">{isAr ? "$1.00" : "$1.00"}</span>
               </div>
               <div className="flex items-center justify-between">
                 <div>
@@ -196,7 +196,7 @@ export default function Features() {
             <div className="bg-bg-alt/80 border border-border rounded-xl p-3.5 space-y-2">
               <div className="flex items-center justify-between text-xs">
                 <span className="text-text-muted text-[10px]">{isAr ? "إجمالي مبيعات الكروت اليومية" : "Daily Voucher Revenue"}</span>
-                <span className="text-emerald-500 font-extrabold text-xs">{isAr ? "1,420,000 ج.س" : "1,420,000 SDG"}</span>
+                <span className="text-emerald-500 font-extrabold text-xs">$1,420</span>
               </div>
               <div className="h-10 flex items-end justify-between gap-1.5 pt-2">
                 {[35, 50, 45, 75, 60, 90, 85, 100].map((height, i) => (
