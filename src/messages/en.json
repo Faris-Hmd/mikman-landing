@@ -88,66 +88,53 @@
   "plans": {
     "eyebrow": "PRICING",
     "heading": "Flexible Plans",
-    "subheading": "Start free for a week, upgrade as your network grows.",
+    "subheading": "Flexible plans tailored for your network growth.",
     "whatsapp": "249966626693",
     "whatsappMsg": "Hi, I'm interested in the %s plan for Mikman.",
     "current": "Current",
     "upcoming": "Pro Tier",
     "tiers": [
       {
-        "name": "Free",
-        "price": "0 SDG",
-        "period": "/week",
-        "features": [
-          "1 MikroTik router",
-          "Hotspot voucher manager",
-          "Realtime status dashboard",
-          "Community support"
-        ],
-        "cta": "Start Free",
-        "highlight": false
-      },
-      {
         "name": "Basic",
-        "price": "30,000 SDG",
+        "price": "$5",
         "period": "/month",
         "features": [
           "1 MikroTik router",
-          "SDG Revenue analytics & reporting",
+          "Revenue analytics & reporting",
           "Custom PDF voucher templates",
           "Automated config backups",
           "Priority support"
         ],
-        "cta": "Open App",
+        "cta": "Get Started",
         "highlight": false
       },
       {
         "name": "Pro",
-        "price": "50,000 SDG",
+        "price": "$8",
         "period": "/month",
         "features": [
           "Up to 5 MikroTik routers",
-          "SDG Revenue analytics & reporting",
+          "Revenue analytics & reporting",
           "Custom PDF voucher templates",
           "Automated config backups",
           "Priority support"
         ],
-        "cta": "Open App",
+        "cta": "Get Started",
         "highlight": true
       },
       {
         "name": "Max",
-        "price": "80,000 SDG",
+        "price": "$13",
         "period": "/month",
         "features": [
           "Up to 20 MikroTik routers",
-          "SDG Revenue analytics & reporting",
+          "Revenue analytics & reporting",
           "Custom PDF voucher templates",
           "Automated config backups",
           "Multi-admin permissions",
           "Priority support"
         ],
-        "cta": "Contact Us",
+        "cta": "Get Started",
         "highlight": false
       }
     ]
